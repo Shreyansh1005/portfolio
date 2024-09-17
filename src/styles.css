@@ -1,0 +1,589 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Hero Section */
+.hero {
+  height: 90vh;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  color: white;
+  text-align: center;
+  position: relative; /* For positioning floating blocks and image */
+  overflow: hidden; /* Ensure floating blocks don't overflow */
+}
+
+/* Hero Content */
+.hero-content {
+  z-index: 1; /* Ensure content is above the floating blocks and image */
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: white;
+  color: #3498db;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Hero Image Container */
+.hero-image-container {
+  position: absolute;
+  right: 20px; /* Position image from the right */
+  bottom: 20px; /* Position image from the bottom */
+  width: 300px; /* Adjust size as needed */
+  height: 300px; /* Adjust size as needed */
+  border-radius: 50%; /* Circular shape */
+  background: rgba(255, 255, 255, 0.2); /* Glassy effect with slight transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px); /* Glassy background effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for better visual depth */
+  overflow: hidden; /* Ensure image stays within the circle */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+  border-radius: 50%; /* Ensures the image also follows the circular shape */
+}
+
+
+/* Floating Blocks */
+/* Floating Blocks Container */
+.floating-blocks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Ensure floating blocks do not interfere with other content */
+}
+
+/* Floating Block */
+.floating-block {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle background color for blocks */
+  border-radius: 50%;
+  animation: float 15s infinite ease-in-out;
+}
+
+/* Floating Block Variations */
+.floating-block:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-duration: 12s;
+}
+
+.floating-block:nth-child(2) {
+  top: 30%;
+  left: 50%;
+  animation-duration: 18s;
+}
+
+.floating-block:nth-child(3) {
+  top: 60%;
+  left: 80%;
+  animation-duration: 14s;
+}
+
+.floating-block:nth-child(4) {
+  top: 80%;
+  left: 40%;
+  animation-duration: 16s;
+}
+.floating-block:nth-child(5) {
+  top: 90%;
+  left: 30%;
+  animation-duration: 16s;
+}
+.floating-block:nth-child(6) {
+  top: 450%;
+  left: 80%;
+  animation-duration: 16s;
+}
+
+/* Keyframes for Floating Animation */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-20px, -30px);
+  }
+  50% {
+    transform: translate(20px, -30px);
+  }
+  75% {
+    transform: translate(-20px, 30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+  .about {
+    padding: 60px 0;
+    background: linear-gradient(to right, #34495e, #2c3e50);
+    color: white;
+    text-align: center;
+    margin-top: 100px; /* To ensure it's not hidden behind the navbar */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .about h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+  }
+  
+  .about-content {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .highlight {
+    color: #e74c3c; /* Highlight important text with a contrasting color */
+    font-weight: bold;
+  }
+  
+  .about p {
+    margin-bottom: 20px;
+    color: #ecf0f1;
+  }
+  
+
+  .experience {
+    padding: 60px 0;
+    background: #f1f1f1;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .experience h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #34495e;
+  }
+  
+  .experience-container {
+  display: flex;
+  justify-content: space-between; /* Distribute the items evenly in the row */
+  align-items: flex-start; /* Align the items at the top */
+  flex-wrap: nowrap; /* Force all items to stay in a single row */
+  gap: 20px; /* Adds space between the items */
+  overflow-x: auto; /* Allows horizontal scrolling if necessary */
+  padding: 20px 0; /* Adds some padding for better spacing */
+}
+
+.experience-item {
+  flex: 0 0 30%; /* Set the boxes to take up 30% of the container's width */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 250px; /* Prevent the boxes from shrinking too much */
+}
+
+.experience-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+  
+  .experience-item h3 {
+    font-size: 1.6em;
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+  
+  .experience-duration {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+  }
+  
+  .experience-item p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #2c3e50;
+  }
+  
+  .highlight {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  
+
+  .skills {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .skills h2 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills-list li {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .skills-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+ /* Projects Section */
+.projects {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.projects h2 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.project:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* Animation for Result Management System */
+.project.result-management::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.project.result-management:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.3;
+}
+
+/* Animation for AI in Agriculture */
+.project.ai-agriculture::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.project.ai-agriculture:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.3;
+}
+
+/* Animation for NewsDekh */
+.project.news-dekh::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #e1e9e4, #2670e7);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Show animation on hover */
+.project:hover::after {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.3;
+}
+
+/* Ensure container positioning for animations */
+.project {
+  position: relative;
+}
+
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds consistent space between inputs */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  }
+  
+  .contact-form button {
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 8px 20px rgba(41, 128, 185, 0.3);
+  }
+  
+  .contact-form h2 {
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+
+  section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .logo {
+    float: left;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 20px;
+    text-transform: uppercase;
+  }
+
+  /* Navbar Container */
+  /* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #3498db, #8e44ad); /* Diagonal gradient */
+  padding: 10px 20px; /* Adjusted padding for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow for a modern look */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav items */
+  align-items: center;
+  transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* Logo Styling */
+.logo a {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.logo a:hover {
+  color: #ecf0f1;
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Spacing between nav items */
+}
+
+.nav-list li {
+  position: relative;
+}
+
+/* Navigation Links */
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-list a:hover {
+  background: rgba(255, 255, 255, 0.2); /* Subtle background effect */
+  color: #ecf0f1;
+  transform: scale(1.05); /* Slightly scale up the item */
+}
+
+/* Active and Focused State */
+.nav-list a.active,
+.nav-list a:focus {
+  color: #ecf0f1;
+  background: rgba(255, 255, 255, 0.3); /* More pronounced background for active items */
+}
+
+/* Shrink Effect */
+.navbar.shrink {
+  padding: 5px 20px;
+  background: linear-gradient(135deg, #6a1b9a, #3498db); /* Darker gradient when shrunk */
+}
+
+  .container {
+    padding-top: 30px; /* Adjusted for fixed navbar */
+  }
+
+  .footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+  }
+  
+  .footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+/* Responsive design settings */
+
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .logo {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .navbar-menu {
+    display: flex;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+}
